@@ -12,13 +12,12 @@ import java.util.List;
 public class ClaimsController {
     @RequestMapping(value = "/claims", method = RequestMethod.GET)
     public List<Claim> getAllClaims() throws Exception {
-//        List<Claim> allBookings = bookingService.getAllBookings();
         return null;
     }
 
-    @RequestMapping(value = "/bookings", method = RequestMethod.POST)
-    public Claim createBooking( @RequestBody Claim newClaim )	{
-        // create new Booking, return Booking with generated ID
+    @RequestMapping(value = "/claims/create", method = RequestMethod.POST)
+    public Claim createClaim( @RequestBody Claim newClaim )	{
+        // create new Claim, return Claim with generated ID
         return newClaim;
     }
 }

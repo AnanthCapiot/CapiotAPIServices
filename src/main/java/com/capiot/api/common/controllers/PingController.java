@@ -1,4 +1,4 @@
-package com.capiot.api.travel.controllers;
+package com.capiot.api.common.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
