@@ -3,10 +3,7 @@ package com.capiot.api.insurance.controllers;
 import com.capiot.api.insurance.model.Claim;
 import com.capiot.api.insurance.service.ClaimsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,15 @@ public class ClaimsController {
     public Claim createClaim( @RequestBody Claim newClaim )	{
         // create new Claim, return Claim with generated ID
         return newClaim;
+    }
+
+    @RequestMapping(value = "/claims/{id}", method = RequestMethod.GET )
+    public Claim getClaim() throws Exception {
+        return claimsService.getAllClaims().get( 0 );
+    }
+
+    @RequestMapping(value = "/claims/{id}", method = RequestMethod.POST )
+    public Claim updateClaim( @RequestBody Claim aClaim, @PathVariable String claimID ) throws Exception {
+        return claimsService.getAllClaims().get( 0 );
     }
 }

@@ -53,7 +53,7 @@ public class BookingController {
 	}
 	
 	// Replace a Booking!
-	@PutMapping("/bookings/id}")	
+	@PutMapping("/bookings/{id}")
 	public void updateBooking( @RequestBody Booking aBooking, @PathVariable String id  )	{
 		
 	}
