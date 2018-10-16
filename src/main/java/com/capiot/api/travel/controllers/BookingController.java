@@ -23,25 +23,25 @@ public class BookingController {
 	private BookingService bookingService;
 
 	//@GetMapping( value = "/" )
-	@RequestMapping(value = "/bookings", method = RequestMethod.GET)
+	@RequestMapping(value = "/v1/bookings", method = RequestMethod.GET)
 	public List<Booking> getAllBookings() throws Exception {
         List<Booking> allBookings = bookingService.getAllBookings();
 		return allBookings;
 	}	
 	
 	//@PostMapping( value = "/" )
-	@RequestMapping(value = "/bookings/search", method = RequestMethod.POST)
+	@RequestMapping(value = "/v1/bookings/search", method = RequestMethod.POST)
 	public List<Booking> getAllBookings( @RequestBody BasicSearchCriteria filter )	{
 	    return null;
 	}
 	
-	@RequestMapping(value = "/bookings", method = RequestMethod.POST) 
+	@RequestMapping(value = "/v1/bookings/create", method = RequestMethod.POST)
 	public Booking createBooking( @RequestBody Booking newBooking )	{
 		// create new Booking, return Booking with generated ID
 		return newBooking;
 	}
 	
-	@GetMapping( value="/bookings/{id}" )
+	@GetMapping( value="/v1/bookings/{id}" )
 	public Booking getBooking( @PathVariable String id ) {
 		try {
 			return null;
@@ -53,7 +53,7 @@ public class BookingController {
 	}
 	
 	// Replace a Booking!
-	@PutMapping("/bookings/{id}")
+	@PutMapping("/v1/bookings/{id}")
 	public void updateBooking( @RequestBody Booking aBooking, @PathVariable String id  )	{
 		
 	}

@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+//@RequestMapping("/ackoGI/api")
 public class PingController {
-    @GetMapping(value = "/ping", produces = "application/json")
+    @GetMapping(value = "/v1/ping", produces = "application/json")
     public String pingService() {
         return "{\"ping\":\"OK\"}";
     }

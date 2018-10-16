@@ -15,13 +15,13 @@ import java.util.UUID;
 @RestController
 public class PolicyHolderController {
 
-    @RequestMapping(value = "/policyHolders/create", method = RequestMethod.POST )
+    @RequestMapping(value = "/v1/policyHolders/create", method = RequestMethod.POST )
     public PolicyHolder createPolicyHolder(PolicyHolder newPolicyHolder )   {
         newPolicyHolder.setPolicyHolderID(UUID.randomUUID().toString().toUpperCase().substring( 0, 8 ));
         return newPolicyHolder;
     }
 
-    @RequestMapping(value = "/policyHolders", method = RequestMethod.GET )
+    @RequestMapping(value = "/v1/policyHolders", method = RequestMethod.GET )
     public List<PolicyHolder> getPolicyHolders() {
         ArrayList<PolicyHolder> policyHolders = new ArrayList<>();
         policyHolders.add( getTestPolicyHolder() );
