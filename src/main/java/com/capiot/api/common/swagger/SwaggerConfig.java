@@ -1,4 +1,4 @@
-package com.capiot.api.travel.swagger;
+package com.capiot.api.common.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
