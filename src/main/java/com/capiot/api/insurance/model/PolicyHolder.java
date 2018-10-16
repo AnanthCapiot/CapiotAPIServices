@@ -1,8 +1,13 @@
 package com.capiot.api.insurance.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.time.LocalDate;
 
+@JsonPropertyOrder({ "policyHolderID", "policyNumber", "coverNoteNumber", "nameOfInsured" })
 public class PolicyHolder {
+
+    private String policyHolderID;
 
     private String policyNumber;
 
@@ -21,6 +26,14 @@ public class PolicyHolder {
     private String emailID;
 
     private PolicyHolderBankDetails bankDetails;
+
+    public String getPolicyHolderID() {
+        return policyHolderID;
+    }
+
+    public void setPolicyHolderID(String policyHolderID) {
+        this.policyHolderID = policyHolderID;
+    }
 
     public PolicyHolderBankDetails getBankDetails() {
         return bankDetails;

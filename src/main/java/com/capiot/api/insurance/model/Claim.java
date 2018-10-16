@@ -1,9 +1,16 @@
 package com.capiot.api.insurance.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.time.LocalDate;
 import java.util.List;
 
+@JsonPropertyOrder({ "policyHolderDetails", "incidentDetails", "incidentType", "incidentCircumstanceStatement",
+        "driverDetails", "claimDocuments", "tpDetails", "claimDate", "claimantName", "claimSigned" })
+
 public class Claim {
+
+    private String claimID;
 
     private PolicyHolder policyHolderDetails;
 
@@ -28,6 +35,14 @@ public class Claim {
 
     public PolicyHolder getPolicyHolderDetails() {
         return policyHolderDetails;
+    }
+
+    public String getClaimID() {
+        return claimID;
+    }
+
+    public void setClaimID(String claimID) {
+        this.claimID = claimID;
     }
 
     public void setPolicyHolderDetails(PolicyHolder policyHolderDetails) {

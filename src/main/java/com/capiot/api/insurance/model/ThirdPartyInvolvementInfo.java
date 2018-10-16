@@ -2,6 +2,8 @@ package com.capiot.api.insurance.model;
 
 public class ThirdPartyInvolvementInfo {
 
+    private String tpID;
+
     private String tpType; //Vehicle or Passenger or Injury or Occupant or Property
 
     private Address inspectionAddress;
@@ -11,6 +13,14 @@ public class ThirdPartyInvolvementInfo {
     private String identification;
 
     private String injuryDamageDesc;
+
+    public String getTpID() {
+        return tpID;
+    }
+
+    public void setTpID(String tpID) {
+        this.tpID = tpID;
+    }
 
     public String getTpType() {
         return tpType;

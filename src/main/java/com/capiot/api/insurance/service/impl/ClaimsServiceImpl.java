@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ClaimsServiceImpl implements ClaimsService  {
@@ -27,8 +28,10 @@ public class ClaimsServiceImpl implements ClaimsService  {
 
     private Claim getTestClaim() {
         Claim aClaim = new Claim();
+        aClaim.setClaimID( UUID.randomUUID().toString().toUpperCase().substring( 0, 8 ));
 
         PolicyHolder claimant = new PolicyHolder();
+        claimant.setPolicyHolderID( UUID.randomUUID().toString().toUpperCase().substring( 0, 8 ));
         claimant.setPolicyNumber( "ATO-001-234-4455" );
         claimant.setCoverNoteNumber( "CN-001-234-4455" );
         claimant.setDob( LocalDate.of( 1970, 2, 1 ));
@@ -61,6 +64,7 @@ public class ClaimsServiceImpl implements ClaimsService  {
         claimant.setBankDetails( claimantBankDetails );
 
         VehicleIncident anAccident = new VehicleIncident();
+        anAccident.setIncidentID( UUID.randomUUID().toString().toUpperCase().substring( 0, 8 ));
         anAccident.setChasisNumber( "600132CTZP78900" );
         anAccident.setRegistrationNumber( "TG 10 AB - MA 9827" );
         anAccident.setGdFIRNumber( "TG/JMS ST PS/2018/10/16/44" );
@@ -72,6 +76,7 @@ public class ClaimsServiceImpl implements ClaimsService  {
         anAccident.setPoliceReport( true );
 
         Driver driver = new Driver();
+        driver.setDriverID( UUID.randomUUID().toString().toUpperCase().substring( 0, 8 ));
         driver.setDlIssuingRTO( "TG SECBAD RTO" );
         driver.setDlNumber( "TG HYD DL 8877/2018/3399" );
         driver.setMobileNumber( "987 456 1230" );
@@ -91,15 +96,18 @@ public class ClaimsServiceImpl implements ClaimsService  {
         aClaim.setClaimSigned( true );
 
         ThirdPartyInvolvementInfo aTP = new ThirdPartyInvolvementInfo();
+        aTP.setTpID( UUID.randomUUID().toString().toUpperCase().substring( 0, 8 ));
         aTP.setContactNumber( "984 919 2266" );
         aTP.setIdentification( "RT Brijesh bearing license number 'TG HYD DL 112/2012/5482'" );
         aTP.setInjuryDamageDesc( "RT Brijesh car was hit by Claimant's car - chain reaction" );
         aTP.setInspectionAddress( claimantAddress );
         aTP.setTpType( "Vehicle" );
         List<ThirdPartyInvolvementInfo> tpDetails = new ArrayList<>();
+        tpDetails.add( aTP );
         aClaim.setTpDetails( tpDetails );
 
         ClaimDocument firDoc = new ClaimDocument();
+        firDoc.setDocID( UUID.randomUUID().toString().toUpperCase().substring( 0, 8 ));
         firDoc.setApproved( true );
         firDoc.setCreatedDate( LocalDate.of( 2018, 10, 15 ));
         firDoc.setDocID( "FIR" );
@@ -108,6 +116,7 @@ public class ClaimsServiceImpl implements ClaimsService  {
         firDoc.setSigned( true );
 
         ClaimDocument claimForm = new ClaimDocument();
+        claimForm.setDocID( UUID.randomUUID().toString().toUpperCase().substring( 0, 8 ));
         claimForm.setApproved( true );
         claimForm.setCreatedDate( LocalDate.of( 2018, 10, 15 ));
         claimForm.setDocID( "CLM FRM" );

@@ -1,8 +1,13 @@
 package com.capiot.api.insurance.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.time.LocalDateTime;
 
+@JsonPropertyOrder({ "incidentID", "incidentType", "registrationNumber", "incidentDateTime" })
 public class VehicleIncident {
+
+    private String incidentID;
 
     private String incidentType; //Accident or Theft
 
@@ -21,6 +26,14 @@ public class VehicleIncident {
     private String nameOfPoliceStation;
 
     private String placeOfIncident;
+
+    public String getIncidentID() {
+        return incidentID;
+    }
+
+    public void setIncidentID(String incidentID) {
+        this.incidentID = incidentID;
+    }
 
     public String getIncidentType() {
         return incidentType;
